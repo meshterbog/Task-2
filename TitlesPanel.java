@@ -1,25 +1,31 @@
-/*
+package Drty;/*
  * Decompiled with CFR 0.139.
  */
-import java.awt.BasicStroke;
 import java.awt.Dimension;
 import java.awt.Graphics;
 import java.awt.Graphics2D;
 import java.awt.Insets;
-import java.awt.Paint;
 import java.awt.RenderingHints;
-import java.awt.Shape;
-import java.awt.Stroke;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.awt.geom.AffineTransform;
 import javax.swing.JPanel;
 import javax.swing.Timer;
-
+/**
+ * This class creates generic lightweight container.
+ *@author Meshter Bogdan
+ *@version 1.0
+ */
 public class TitlesPanel
 extends JPanel
 implements ActionListener {
+	/**
+	 * Provide control over geometry, coordinate transformations, color management, and text layout
+	 */
     private Graphics2D g2d;
+    /**
+     * Creates a Timer object, registering one or more action listeners on it, and starting the timer using the start method. 
+     */
     private Timer animation;
     private boolean is_done = true;
     private int start_angle = 0;
@@ -38,7 +44,10 @@ implements ActionListener {
             this.repaint();
         }
     }
-
+/**
+ * Allow an application to draw onto components that are realized on various devices, as well as onto off-screen images.
+ * @param g graphic context
+ */
     private void doDrawing(Graphics g) {
         this.is_done = false;
         this.g2d = (Graphics2D)g;
@@ -72,6 +81,10 @@ implements ActionListener {
     }
 
     @Override
+    
+    /**
+     * Зrotected void paintComponent(Graphics g)
+     */
     public void paintComponent(Graphics g) {
         super.paintComponent(g);
         this.doDrawing(g);
